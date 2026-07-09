@@ -8,8 +8,8 @@ class Gittool < Formula
   depends_on "python@3.11"
 
   def install
-    # 1. Strict OS Gatekeeping: Block Windows
-    if OS.windows? || ENV["OS"] =~ /Windows_NT/i
+    # 1. Strict OS Gatekeeping: Only allow macOS and Linux, block Windows
+    unless OS.mac? || OS.linux?
       odie "Error: gittool does not support Windows operating systems."
     end
 
