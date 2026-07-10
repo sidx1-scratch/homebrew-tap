@@ -1,8 +1,8 @@
 class Gittool < Formula
   desc "A tool that makes Git incredibly simple with 5 core commands"
   homepage "https://github.com/sidx1-scratch/gittool"
-  url "https://github.com/sidx1-scratch/gittool/archive/refs/tags/v4.tar.gz"
-  sha256 "6eb05e5017f3abb8df54d6f2b51c9761ae14635603f3170ca3ff59bb88b2c82e"
+  url "https://github.com/sidx1-scratch/gittool/archive/refs/tags/v5.tar.gz"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "MIT"
 
   depends_on "go" => :build
