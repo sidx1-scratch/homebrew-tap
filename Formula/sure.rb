@@ -2,35 +2,37 @@ class Sure < Formula
   desc "Your terminal's second opinion - AI-powered command safety analysis"
   homepage "https://github.com/sidx1-scratch/sure"
   license "MIT"
-  version "0.1.0"
+  version "0.2.0"
 
   on_linux do
     on_intel do
-      url "https://github.com/sidx1-scratch/sure/releases/download/v0.1.0/sure_0.1.0_linux_amd64.tar.gz"
-      sha256 "91420abf64c42c0532393dabd211b2e9deb030e4296887797a673573d4cb86d9"
+      url "https://github.com/sidx1-scratch/sure/releases/download/v0.2.0/sure_0.2.0_linux_amd64.tar.gz"
+      sha256 "c32361424a2ccf4011e792892ca6bf8537f4c9143518eddb21eb0fe1ac8f8499"
     end
     on_arm do
-      url "https://github.com/sidx1-scratch/sure/releases/download/v0.1.0/sure_0.1.0_linux_arm64.tar.gz"
-      sha256 "ce9019473b737ecdc43be2a95d2cb2ee275e6dfb0ebad964111ca8a8c153a510"
+      url "https://github.com/sidx1-scratch/sure/releases/download/v0.2.0/sure_0.2.0_linux_arm64.tar.gz"
+      sha256 "715e534cf63d7af4f102b6b24bb13489b80f49d2a7d3210ad26c5407b8676ba9"
     end
   end
 
   on_macos do
     on_intel do
-      url "https://github.com/sidx1-scratch/sure/releases/download/v0.1.0/sure_0.1.0_darwin_amd64.tar.gz"
-      sha256 "1e525d79a86aab1c5c94ef2305941df5a9d208cb1e0323d1e8acd9ab77103617"
+      url "https://github.com/sidx1-scratch/sure/releases/download/v0.2.0/sure_0.2.0_darwin_amd64.tar.gz"
+      sha256 "f134283eadc896e315e26cb84da52591014dc5d45646bc7babbe2e10db04d610"
     end
     on_arm do
-      url "https://github.com/sidx1-scratch/sure/releases/download/v0.1.0/sure_0.1.0_darwin_arm64.tar.gz"
-      sha256 "4531c6e802dbeeb0f96a96ad5429ce0e9b7feced46b6c9c00efd69a316be02b5"
+      url "https://github.com/sidx1-scratch/sure/releases/download/v0.2.0/sure_0.2.0_darwin_arm64.tar.gz"
+      sha256 "6705e8aaa69850fef5f09ec96da8032adc9ee358724d12ac7e454d024e5647a0"
     end
   end
 
+  # Releases contain static, prebuilt binaries, so installing from the tap does
+  # not require Go, a compiler, or any kernel changes on the user's machine.
   def install
     bin.install "sure"
   end
 
   test do
-    system "#{bin}/sure", "--version"
+    assert_match version.to_s, shell_output("#{bin}/sure --version")
   end
 end
